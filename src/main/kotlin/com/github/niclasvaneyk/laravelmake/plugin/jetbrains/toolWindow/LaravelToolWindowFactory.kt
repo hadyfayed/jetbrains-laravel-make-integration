@@ -23,13 +23,13 @@ class MyListener: ToolWindowManagerListener {
 }
 
 class LaravelToolWindowFactory : ToolWindowFactory {
-    override fun getIcon(): Icon? {
-        if (Registry.get("ide.experimental.ui").asBoolean()) {
-            return LaravelIcons.LaravelLogoForToolWindowForNewUI;
-        }
-
-        return super.getIcon()
-    }
+//    override fun getIcon(): Icon? {
+//        if (Registry.get("ide.experimental.ui").asBoolean()) {
+//            return LaravelIcons.LaravelLogoForToolWindowForNewUI;
+//        }
+//
+//        return super.getIcon()
+//    }
 
     override fun createToolWindowContent(
         project: Project,
@@ -73,7 +73,7 @@ class LaravelToolWindowFactory : ToolWindowFactory {
         laravelProject.introspection.routeIntrospecter.refresh()
     }
 
-    override fun isApplicable(project: Project): Boolean {
+    override suspend fun isApplicableAsync(project: Project): Boolean {
         return project.service<LaravelMakeProjectService>() .application != null
     }
 }

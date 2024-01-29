@@ -31,6 +31,7 @@
     </extensionPoints>
 
     <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="com.github.niclasvaneyk.laravelmake.plugin.jetbrains.listener.ProjectOpenedListener"/>
         <projectService serviceImplementation="com.github.niclasvaneyk.laravelmake.plugin.jetbrains.settings.LaravelMakeProjectSettings"/>
         <projectConfigurable
             instance="com.github.niclasvaneyk.laravelmake.plugin.jetbrains.settings.LaravelMakeProjectConfigurable"
@@ -80,10 +81,6 @@
     </extensions>
 
     <projectListeners>
-        <listener
-            class="com.github.niclasvaneyk.laravelmake.plugin.jetbrains.listener.ProjectOpenedListener"
-            topic="com.intellij.openapi.project.ProjectManagerListener"
-        />
         <listener
                 class="com.github.niclasvaneyk.laravelmake.plugin.jetbrains.listener.PhpInterpreterListener"
                 topic="com.jetbrains.php.config.PhpProjectWorkspaceConfigurationListener"

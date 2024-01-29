@@ -7,9 +7,9 @@ plugins {
     // Java support
     id("java")
     // Kotlin support
-    id("org.jetbrains.kotlin.jvm") version "1.7.21"
+    id("org.jetbrains.kotlin.jvm") version "1.9.0"
     // Gradle IntelliJ Plugin
-    id("org.jetbrains.intellij") version "1.10.0"
+    id("org.jetbrains.intellij") version "1.17.0"
     // Gradle Changelog Plugin
     id("org.jetbrains.changelog") version "2.0.0"
     // Gradle Qodana Plugin
@@ -30,31 +30,31 @@ kotlin {
 
 dependencies {
     implementation("io.reactivex.rxjava3:rxkotlin:3.0.1")
-    implementation("org.junit.jupiter:junit-jupiter:5.8.2")
-    implementation("org.assertj:assertj-core:3.22.0")
+    implementation("org.junit.jupiter:junit-jupiter:5.9.2")
+    implementation("org.assertj:assertj-core:3.24.2")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
-    implementation("org.jetbrains.kotlin:kotlin-test:1.6.0")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.0")
+    implementation("org.jetbrains.kotlin:kotlin-test:1.8.10")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.10")
 }
 
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
 intellij {
-    pluginName.set(properties("pluginName"))
-    version.set(properties("platformVersion"))
-    type.set(properties("platformType"))
-//    if (System.getenv("PHPSTORM_LOCAL_PATH") != null) {
-//    localPath.set("/Users/niclasvaneyk/Applications/PhpStorm.app")
-//    }
+            pluginName.set(properties("pluginName"))
+            version.set(properties("platformVersion"))
+            type.set(properties("platformType"))
+        //    if (System.getenv("PHPSTORM_LOCAL_PATH") != null) {
+        //    localPath.set("/Users/niclasvaneyk/Applications/PhpStorm.app")
+        //    }
 
     plugins.set(listOf(
         // https://plugins.jetbrains.com/plugin/6610-php/versions
-        "com.jetbrains.php:232.8660.205",
+        "com.jetbrains.php:233.11799.241",
         // https://plugins.jetbrains.com/plugin/8116-node-js-remote-interpreter/versions
-        "org.jetbrains.plugins.node-remote-interpreter:232.8660.149",
+        "org.jetbrains.plugins.node-remote-interpreter:233.11799.194",
         // https://plugins.jetbrains.com/plugin/7511-php-remote-interpreter/versions
-        "org.jetbrains.plugins.phpstorm-remote-interpreter:232.8660.142",
+        "org.jetbrains.plugins.phpstorm-remote-interpreter:233.11799.172",
         // https://plugins.jetbrains.com/plugin/8595-php-docker/versions
-        "org.jetbrains.plugins.phpstorm-docker:232.8660.142",
+        "org.jetbrains.plugins.phpstorm-docker:233.11799.232",
 
         // These seem to be bundled and do not require a specific version?
         "com.intellij.database",
